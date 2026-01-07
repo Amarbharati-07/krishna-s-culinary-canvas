@@ -1,5 +1,7 @@
-import { Star, Quote } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 
 const reviews = [
   {
@@ -35,8 +37,28 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, 5000); // Auto-refresh every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextReview = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  };
+
+  const prevReview = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+  };
+
+  const currentReview = reviews[currentIndex];
+
   return (
-    <section id="reviews" className="py-20 lg:py-32 bg-background">
+    <section id="reviews" className="py-20 lg:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Customer Reviews</h2>
@@ -45,35 +67,71 @@ const ReviewsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {reviews.map((review, index) => (
+        <div className="max-w-4xl mx-auto relative">
+          <div className="relative min-h-[300px] flex items-center justify-center">
             <div 
-              key={index} 
-              className="bg-card p-6 rounded-2xl shadow-soft border border-border/50 flex flex-col h-full animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={currentIndex}
+              className="bg-card p-10 md:p-16 rounded-3xl shadow-elegant border border-primary/10 flex flex-col items-center text-center animate-fade-in w-full"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <Avatar className="h-12 w-12 border-2 border-primary/10">
-                  <AvatarImage src={review.image} alt={review.name} />
-                  <AvatarFallback>{review.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <h4 className="font-semibold text-foreground">{review.name}</h4>
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`w-3 h-3 ${i < review.rating ? "fill-secondary text-secondary" : "text-muted"}`} />
-                    ))}
-                  </div>
-                </div>
+              <Avatar className="h-20 w-20 border-4 border-primary/10 mb-6">
+                <AvatarImage src={currentReview.image} alt={currentReview.name} />
+                <AvatarFallback>{currentReview.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              </Avatar>
+              
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-5 h-5 ${i < currentReview.rating ? "fill-secondary text-secondary" : "text-muted"}`} />
+                ))}
               </div>
-              <div className="relative flex-1">
-                <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/10 -z-10" />
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "{review.comment}"
+
+              <div className="relative mb-6">
+                <Quote className="absolute -top-6 -left-8 w-12 h-12 text-primary/10" />
+                <p className="text-xl md:text-2xl text-foreground font-serif italic leading-relaxed">
+                  "{currentReview.comment}"
                 </p>
+                <Quote className="absolute -bottom-6 -right-8 w-12 h-12 text-primary/10 rotate-180" />
               </div>
+
+              <h4 className="font-bold text-lg text-primary">{currentReview.name}</h4>
+              <p className="text-sm text-muted-foreground uppercase tracking-widest mt-1">Valued Customer</p>
             </div>
-          ))}
+          </div>
+
+          {/* Controls */}
+          <div className="flex justify-center items-center gap-6 mt-10">
+            <Button 
+              variant="outline" 
+              size="icon" 
+              onClick={prevReview}
+              className="rounded-full hover-elevate"
+              aria-label="Previous review"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            
+            <div className="flex gap-2">
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === currentIndex ? "bg-primary w-6" : "bg-primary/20 hover:bg-primary/40"
+                  }`}
+                  aria-label={`Go to review ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <Button 
+              variant="outline" 
+              size="icon" 
+              onClick={nextReview}
+              className="rounded-full hover-elevate"
+              aria-label="Next review"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
