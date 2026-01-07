@@ -181,6 +181,7 @@ const MenuSection = () => {
               src={currentCategory?.image} 
               alt={currentCategory?.name}
               className="w-full h-48 md:h-64 object-cover"
+              loading="lazy"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = placeholderImg;
               }}
@@ -221,6 +222,7 @@ const MenuSection = () => {
                     src={item.image} 
                     alt={item.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = placeholderImg;
                     }}

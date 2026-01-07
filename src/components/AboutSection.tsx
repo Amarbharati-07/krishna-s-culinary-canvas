@@ -58,6 +58,7 @@ const AboutSection = () => {
                   src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=500&fit=crop"
                   alt="Restaurant Interior"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-card aspect-square bg-primary flex items-center justify-center p-6">
@@ -79,6 +80,7 @@ const AboutSection = () => {
                   src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=500&fit=crop"
                   alt="Indian Food Preparation"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
