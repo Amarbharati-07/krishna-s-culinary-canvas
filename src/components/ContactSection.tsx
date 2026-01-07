@@ -86,6 +86,26 @@ const ContactSection = () => {
           {/* Map Placeholder */}
           <div className="bg-card rounded-2xl overflow-hidden shadow-card">
             <div className="aspect-square lg:aspect-auto lg:h-full min-h-[400px] bg-muted flex items-center justify-center relative">
+              <div className="absolute top-6 left-6 z-10 bg-white p-4 rounded shadow-lg max-w-[280px] text-sm pointer-events-none border border-gray-200 hidden sm:block">
+                <h3 className="font-bold text-gray-900 mb-1 text-base">Shree Krishna Restaurant</h3>
+                <p className="text-gray-600 leading-tight mb-2 text-xs">
+                  Shop No. 5, Ground Floor, Parvati Commercial Complex, Station Road, Opposite Lajja Sarees, Ambernath, Thane, Maharashtra 421501
+                </p>
+                <div className="flex items-center gap-1 text-gray-500 text-xs mb-3">
+                  <span className="font-medium text-orange-600 text-sm">3.9</span>
+                  <div className="flex text-orange-500">★★★★☆</div>
+                  <span>(1,276 reviews)</span>
+                </div>
+                <div className="flex justify-between items-center border-t pt-2">
+                  <a href="#" className="text-blue-600 hover:underline text-xs font-medium">View larger map</a>
+                  <div className="flex flex-col items-center">
+                    <div className="w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-0.5">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8.5v-4c0-.28.22-.5.5-.5h5V8l3.5 3.25-3.5 3.25z"/></svg>
+                    </div>
+                    <span className="text-[10px] text-blue-600 font-bold uppercase tracking-wider">Directions</span>
+                  </div>
+                </div>
+              </div>
               {/* Stylized Map Placeholder */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
               <iframe

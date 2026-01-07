@@ -233,7 +233,19 @@ const Reservation = () => {
               </div>
 
               {/* Google Map Embed */}
-              <div className="rounded-2xl overflow-hidden shadow-elegant border border-border h-80 bg-muted">
+              <div className="rounded-2xl overflow-hidden shadow-elegant border border-border h-80 bg-muted relative">
+                <div className="absolute top-4 left-4 z-10 bg-white p-3 rounded shadow-md max-w-[250px] text-sm pointer-events-none border border-gray-200">
+                  <h3 className="font-bold text-gray-900 mb-1">Shree Krishna Restaurant</h3>
+                  <p className="text-gray-600 leading-tight mb-1 text-xs">
+                    Shop No. 5, Parvati Commercial Complex, Station Road, Ambernath, Maharashtra 421501
+                  </p>
+                  <div className="flex items-center gap-1 text-gray-500 text-xs mb-2">
+                    <span className="font-medium text-orange-600">3.9</span>
+                    <div className="flex text-orange-500">★★★★☆</div>
+                    <span>(1,276 reviews)</span>
+                  </div>
+                  <a href="#" className="text-blue-600 hover:underline text-xs">View larger map</a>
+                </div>
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.80786934444!2d73.1934!3d19.2004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7930863953457%3A0xe724b07c81d86e0c!2sShree%20Krishna%20Restaurant!5e0!3m2!1sen!2sin!4v1704620000000!5m2!1sen!2sin" 
                   width="100%" 
