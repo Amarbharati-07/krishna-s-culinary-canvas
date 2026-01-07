@@ -6,6 +6,7 @@ const navLinks = [
   { name: "About Us", href: "/#about" },
   { name: "Menu", href: "/#menu" },
   { name: "Gallery", href: "/#gallery" },
+  { name: "Reviews", href: "/#reviews" },
   { name: "Videos", href: "/#videos" },
   { name: "Blog", href: "/#blog" },
   { name: "Contact Us", href: "/reservation" },
