@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X, Leaf } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Menu", href: "#menu" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Videos", href: "#videos" },
-  { name: "Blog", href: "#blog" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/#about" },
+  { name: "Menu", href: "/#menu" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Videos", href: "/#videos" },
+  { name: "Blog", href: "/#blog" },
+  { name: "Contact Us", href: "/reservation" },
 ];
 
 const Navbar = () => {

@@ -88,10 +88,12 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               className="bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              asChild
             >
-              <Calendar className="mr-2 w-5 h-5" />
-              Reserve Table
+              <a href="/reservation">
+                <Calendar className="mr-2 w-5 h-5" />
+                Reserve Table
+              </a>
             </Button>
           </div>
         </div>

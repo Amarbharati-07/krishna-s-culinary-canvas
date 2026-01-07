@@ -5,13 +5,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["Near Railway Station", "Main Road, City Center", "Your City - 123456"],
-    action: { label: "Get Directions", link: "https://maps.google.com" },
+    details: [
+      "Shop No. 5, Ground Floor,",
+      "Parvati Commercial Complex, Station Road,",
+      "Opposite Lajja Sarees, Ambernath, Thane, Maharashtra."
+    ],
+    action: { label: "Get Directions", link: "https://maps.google.com/maps?q=Shree+Krishna+Restaurant+Ambernath" },
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 98765 43210", "+91 12345 67890"],
+    details: ["+91 98765 43210"],
     action: { label: "Call Now", link: "tel:+919876543210" },
   },
   {
@@ -23,7 +27,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["info@shreekrishna.com", "orders@shreekrishna.com"],
+    details: ["info@shreekrishna.com"],
     action: { label: "Send Email", link: "mailto:info@shreekrishna.com" },
   },
 ];
@@ -85,7 +89,7 @@ const ContactSection = () => {
               {/* Stylized Map Placeholder */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.8542376068536!2d79.08857021493426!3d21.145477185931075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06a0d25be3!2sNagpur%20Railway%20Station!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.80786934444!2d73.1934!3d19.2004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzAxLjQiTiA3M8KwMTEnMzYuMiJF!5e0!3m2!1sen!2sin!4v1704620000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "400px" }}
@@ -113,9 +117,12 @@ const ContactSection = () => {
             <Button
               size="lg"
               className="gradient-button text-primary-foreground px-8 py-6 rounded-full shadow-elevated whitespace-nowrap"
+              asChild
             >
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now
+              <a href="/reservation">
+                <Calendar className="w-5 h-5 mr-2" />
+                Reserve Table
+              </a>
             </Button>
           </div>
         </div>
