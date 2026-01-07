@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Mail, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, ExternalLink, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const contactInfo = [

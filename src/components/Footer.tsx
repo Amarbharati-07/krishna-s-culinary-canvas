@@ -62,16 +62,17 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/70">
-                  Near Railway Station, Main Road, City Center
+                  Shop No. 5, Ground Floor, Parvati Commercial Complex, Station Road, 
+                  Opposite Lajja Sarees, Ambernath, Thane, Maharashtra.
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-primary-foreground/70">+91 98765 43210</span>
+                <a href="tel:+919876543210" className="text-primary-foreground/70 hover:text-secondary transition-colors text-sm">+91 98765 43210</a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-primary-foreground/70">7:00 AM - 10:30 PM</span>
+                <span className="text-primary-foreground/70">7:00 AM - 10:30 PM (All Days)</span>
               </li>
             </ul>
           </div>
