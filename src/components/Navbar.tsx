@@ -48,9 +48,15 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="nav-link text-sm font-medium uppercase tracking-wide">
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className={`nav-link text-[11px] xl:text-xs font-semibold uppercase tracking-widest transition-colors ${
+                  isScrolled ? "text-foreground" : "text-primary-foreground"
+                }`}
+              >
                 {link.name}
               </a>
             ))}
@@ -59,7 +65,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className={`lg:hidden p-2 transition-colors ${
+              isScrolled ? "text-foreground" : "text-primary-foreground"
+            } hover:text-primary`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
