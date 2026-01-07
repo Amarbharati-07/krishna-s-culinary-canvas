@@ -15,6 +15,42 @@ import sabudanaKhichdiImg from "@assets/stock_images/sabudana_khichdi_ind_171b2e
 import sabudanaVadaImg from "@assets/stock_images/sabudana_vada_indian_6311216a.jpg";
 import kuttuPuriImg from "@assets/stock_images/indian_fasting_food__23b2df75.jpg";
 
+// New dish images for other categories
+import samosaImg from "@assets/stock_images/indian_street_food_s_758a93ef.jpg";
+import kachoriImg from "@assets/stock_images/indian_street_food_s_83cbce29.jpg";
+import paniPuriImg from "@assets/stock_images/indian_street_food_s_1d817b90.jpg";
+import bhelPuriImg from "@assets/stock_images/indian_street_food_s_94a03055.jpg";
+import sevPuriImg from "@assets/stock_images/indian_street_food_s_59abd492.jpg";
+import dahiPuriImg from "@assets/stock_images/indian_street_food_s_7695aab6.jpg";
+import pavSandwichImg from "@assets/stock_images/indian_street_food_s_1da04cdf.jpg";
+import dabeliImg from "@assets/stock_images/indian_street_food_s_6bfb31bb.jpg";
+import vadaPavImg from "@assets/stock_images/indian_street_food_s_977ff4f0.jpg";
+import springRollImg from "@assets/stock_images/indian_street_food_s_d871d608.jpg";
+
+import plainDosaImg from "@assets/stock_images/south_indian_breakfa_3c258037.jpg";
+import masalaDosaImg from "@assets/stock_images/south_indian_breakfa_ac848312.jpg";
+import idliImg from "@assets/stock_images/south_indian_breakfa_88201950.jpg";
+import meduVadaImg from "@assets/stock_images/south_indian_breakfa_988216a1.jpg";
+import uttapamImg from "@assets/stock_images/south_indian_breakfa_41199087.jpg";
+import upmaImg from "@assets/stock_images/south_indian_breakfa_ca7e9259.jpg";
+import pohaImg from "@assets/stock_images/south_indian_breakfa_ae7e60cb.jpg";
+import alooParathaImg from "@assets/stock_images/south_indian_breakfa_8db427a2.jpg";
+
+import vegSandwichImg from "@assets/stock_images/vegetable_sandwiches_1910e62e.jpg";
+import cheeseSandwichImg from "@assets/stock_images/vegetable_sandwiches_b794e3a2.jpg";
+import grilledSandwichImg from "@assets/stock_images/vegetable_sandwiches_88066e3e.jpg";
+import clubSandwichImg from "@assets/stock_images/vegetable_sandwiches_18bb14e1.jpg";
+import paneerSandwichImg from "@assets/stock_images/vegetable_sandwiches_ce79e6ac.jpg";
+
+import alooTikkiBurgerImg from "@assets/stock_images/vegetable_burgers_al_eaebd95a.jpg";
+import vegCheeseBurgerImg from "@assets/stock_images/vegetable_burgers_al_812a50dd.jpg";
+import paneerBurgerImg from "@assets/stock_images/vegetable_burgers_al_cc6d8e06.jpg";
+import cornBurgerImg from "@assets/stock_images/vegetable_burgers_al_d833ad7c.jpg";
+
+import pavBhajiImg from "@assets/stock_images/vegetarian_pav_bhaji_c7db98fa.jpg";
+import soupImg from "@assets/stock_images/indian_vegetable_sou_609e496a.jpg";
+import placeholderImg from "@assets/stock_images/high_quality_vegetar_48e33079.jpg";
+
 const menuCategories = [
   { id: "snacks", name: "Snacks", icon: UtensilsCrossed, image: menuSnacks },
   { id: "breakfast", name: "Breakfast", icon: Coffee, image: menuBreakfast },
@@ -27,74 +63,74 @@ const menuCategories = [
 
 const menuItems: Record<string, Array<{ name: string; price: number; description?: string; isPopular?: boolean; isSpicy?: boolean; image?: string }>> = {
   snacks: [
-    { name: "Samosa (2 pcs)", price: 30, description: "Crispy pastry with spiced potato filling", isPopular: true },
-    { name: "Kachori (2 pcs)", price: 40, description: "Flaky pastry with dal filling" },
-    { name: "Pani Puri (6 pcs)", price: 40, description: "Crispy puris with spiced water", isPopular: true },
-    { name: "Bhel Puri", price: 50, description: "Tangy puffed rice mixture", isSpicy: true },
-    { name: "Sev Puri (6 pcs)", price: 50, description: "Crispy puris with chutneys and sev" },
-    { name: "Dahi Puri (6 pcs)", price: 60, description: "Sweet and tangy yogurt puris" },
-    { name: "Pav Sandwich", price: 35, description: "Mumbai style bread sandwich" },
-    { name: "Dabeli", price: 40, description: "Sweet and spicy potato in pav", isPopular: true },
-    { name: "Vada Pav", price: 35, description: "Spicy potato fritter in bun", isSpicy: true },
-    { name: "Spring Roll (4 pcs)", price: 60, description: "Crispy vegetable rolls" },
+    { name: "Samosa (2 pcs)", price: 30, description: "Crispy pastry with spiced potato filling", isPopular: true, image: samosaImg },
+    { name: "Kachori (2 pcs)", price: 40, description: "Flaky pastry with dal filling", image: kachoriImg },
+    { name: "Pani Puri (6 pcs)", price: 40, description: "Crispy puris with spiced water", isPopular: true, image: paniPuriImg },
+    { name: "Bhel Puri", price: 50, description: "Tangy puffed rice mixture", isSpicy: true, image: bhelPuriImg },
+    { name: "Sev Puri (6 pcs)", price: 50, description: "Crispy puris with chutneys and sev", image: sevPuriImg },
+    { name: "Dahi Puri (6 pcs)", price: 60, description: "Sweet and tangy yogurt puris", image: dahiPuriImg },
+    { name: "Pav Sandwich", price: 35, description: "Mumbai style bread sandwich", image: pavSandwichImg },
+    { name: "Dabeli", price: 40, description: "Sweet and spicy potato in pav", isPopular: true, image: dabeliImg },
+    { name: "Vada Pav", price: 35, description: "Spicy potato fritter in bun", isSpicy: true, image: vadaPavImg },
+    { name: "Spring Roll (4 pcs)", price: 60, description: "Crispy vegetable rolls", image: springRollImg },
   ],
   breakfast: [
-    { name: "Plain Dosa", price: 60, description: "Crispy rice crepe" },
-    { name: "Masala Dosa", price: 80, description: "Dosa with spiced potato filling", isPopular: true },
-    { name: "Butter Masala Dosa", price: 100, description: "Buttery dosa with potato" },
-    { name: "Cheese Dosa", price: 110, description: "Dosa with melted cheese" },
-    { name: "Mysore Masala Dosa", price: 100, description: "Spicy red chutney dosa", isSpicy: true },
-    { name: "Idli (2 pcs)", price: 40, description: "Steamed rice cakes" },
-    { name: "Idli Sambhar (3 pcs)", price: 60, description: "Idli with lentil soup", isPopular: true },
-    { name: "Medu Vada (2 pcs)", price: 50, description: "Crispy lentil donuts" },
-    { name: "Uttapam", price: 70, description: "Thick rice pancake with toppings" },
-    { name: "Upma", price: 50, description: "Savory semolina dish" },
-    { name: "Poha", price: 45, description: "Flattened rice with spices" },
-    { name: "Aloo Paratha", price: 70, description: "Potato stuffed flatbread" },
+    { name: "Plain Dosa", price: 60, description: "Crispy rice crepe", image: plainDosaImg },
+    { name: "Masala Dosa", price: 80, description: "Dosa with spiced potato filling", isPopular: true, image: masalaDosaImg },
+    { name: "Butter Masala Dosa", price: 100, description: "Buttery dosa with potato", image: masalaDosaImg },
+    { name: "Cheese Dosa", price: 110, description: "Dosa with melted cheese", image: plainDosaImg },
+    { name: "Mysore Masala Dosa", price: 100, description: "Spicy red chutney dosa", isSpicy: true, image: masalaDosaImg },
+    { name: "Idli (2 pcs)", price: 40, description: "Steamed rice cakes", image: idliImg },
+    { name: "Idli Sambhar (3 pcs)", price: 60, description: "Idli with lentil soup", isPopular: true, image: idliImg },
+    { name: "Medu Vada (2 pcs)", price: 50, description: "Crispy lentil donuts", image: meduVadaImg },
+    { name: "Uttapam", price: 70, description: "Thick rice pancake with toppings", image: uttapamImg },
+    { name: "Upma", price: 50, description: "Savory semolina dish", image: upmaImg },
+    { name: "Poha", price: 45, description: "Flattened rice with spices", image: pohaImg },
+    { name: "Aloo Paratha", price: 70, description: "Potato stuffed flatbread", image: alooParathaImg },
   ],
   fasting: [
     { name: "Sabudana Khichdi", price: 70, description: "Tapioca pearls with peanuts", isPopular: true, image: sabudanaKhichdiImg },
     { name: "Sabudana Vada (2 pcs)", price: 60, description: "Crispy tapioca fritters", image: sabudanaVadaImg },
     { name: "Kuttu Puri (4 pcs)", price: 80, description: "Buckwheat flour puris", image: kuttuPuriImg },
-    { name: "Rajgira Paratha", price: 80, description: "Amaranth flour flatbread" },
-    { name: "Fruit Salad", price: 60, description: "Fresh seasonal fruits" },
-    { name: "Singhara Atta Halwa", price: 50, description: "Sweet water chestnut flour halwa" },
-    { name: "Aloo Jeera (Fasting)", price: 70, description: "Cumin tempered potatoes" },
-    { name: "Makhana", price: 80, description: "Roasted fox nuts with ghee" },
+    { name: "Rajgira Paratha", price: 80, description: "Amaranth flour flatbread", image: alooParathaImg },
+    { name: "Fruit Salad", price: 60, description: "Fresh seasonal fruits", image: placeholderImg },
+    { name: "Singhara Atta Halwa", price: 50, description: "Sweet water chestnut flour halwa", image: placeholderImg },
+    { name: "Aloo Jeera (Fasting)", price: 70, description: "Cumin tempered potatoes", image: placeholderImg },
+    { name: "Makhana", price: 80, description: "Roasted fox nuts with ghee", image: placeholderImg },
   ],
   sandwiches: [
-    { name: "Veg Sandwich", price: 50, description: "Fresh vegetables in bread" },
-    { name: "Cheese Sandwich", price: 70, description: "Melted cheese sandwich" },
-    { name: "Grilled Sandwich", price: 80, description: "Toasted vegetable sandwich", isPopular: true },
-    { name: "Cheese Grilled Sandwich", price: 100, description: "Grilled with extra cheese" },
-    { name: "Club Sandwich", price: 120, description: "Triple decker delight" },
-    { name: "Paneer Sandwich", price: 100, description: "Cottage cheese filling" },
-    { name: "Corn Cheese Sandwich", price: 110, description: "Sweet corn with cheese" },
-    { name: "Jain Sandwich", price: 70, description: "No onion, no garlic" },
+    { name: "Veg Sandwich", price: 50, description: "Fresh vegetables in bread", image: vegSandwichImg },
+    { name: "Cheese Sandwich", price: 70, description: "Melted cheese sandwich", image: cheeseSandwichImg },
+    { name: "Grilled Sandwich", price: 80, description: "Toasted vegetable sandwich", isPopular: true, image: grilledSandwichImg },
+    { name: "Cheese Grilled Sandwich", price: 100, description: "Grilled with extra cheese", image: grilledSandwichImg },
+    { name: "Club Sandwich", price: 120, description: "Triple decker delight", image: clubSandwichImg },
+    { name: "Paneer Sandwich", price: 100, description: "Cottage cheese filling", image: paneerSandwichImg },
+    { name: "Corn Cheese Sandwich", price: 110, description: "Sweet corn with cheese", image: cheeseSandwichImg },
+    { name: "Jain Sandwich", price: 70, description: "No onion, no garlic", image: vegSandwichImg },
   ],
   burgers: [
-    { name: "Aloo Tikki Burger", price: 60, description: "Classic potato patty burger", isPopular: true },
-    { name: "Veg Cheese Burger", price: 80, description: "Vegetable patty with cheese" },
-    { name: "Paneer Burger", price: 100, description: "Spiced paneer patty", isPopular: true },
-    { name: "Corn Burger", price: 90, description: "Sweet corn patty burger" },
-    { name: "Jumbo Burger", price: 120, description: "Extra large veg burger" },
-    { name: "Mexican Burger", price: 110, description: "Spicy Mexican style", isSpicy: true },
+    { name: "Aloo Tikki Burger", price: 60, description: "Classic potato patty burger", isPopular: true, image: alooTikkiBurgerImg },
+    { name: "Veg Cheese Burger", price: 80, description: "Vegetable patty with cheese", image: vegCheeseBurgerImg },
+    { name: "Paneer Burger", price: 100, description: "Spiced paneer patty", isPopular: true, image: paneerBurgerImg },
+    { name: "Corn Burger", price: 90, description: "Sweet corn patty burger", image: cornBurgerImg },
+    { name: "Jumbo Burger", price: 120, description: "Extra large veg burger", image: alooTikkiBurgerImg },
+    { name: "Mexican Burger", price: 110, description: "Spicy Mexican style", isSpicy: true, image: alooTikkiBurgerImg },
   ],
   pavbhaji: [
-    { name: "Pav Bhaji (Regular)", price: 80, description: "Classic Mumbai pav bhaji", isPopular: true },
-    { name: "Pav Bhaji (Special)", price: 100, description: "Extra butter and cheese" },
-    { name: "Cheese Pav Bhaji", price: 120, description: "Topped with grated cheese" },
-    { name: "Paneer Pav Bhaji", price: 130, description: "With cottage cheese cubes" },
-    { name: "Jain Pav Bhaji", price: 90, description: "No onion, no garlic" },
-    { name: "Dry Bhaji (No Pav)", price: 60, description: "Just the bhaji" },
+    { name: "Pav Bhaji (Regular)", price: 80, description: "Classic Mumbai pav bhaji", isPopular: true, image: pavBhajiImg },
+    { name: "Pav Bhaji (Special)", price: 100, description: "Extra butter and cheese", image: pavBhajiImg },
+    { name: "Cheese Pav Bhaji", price: 120, description: "Topped with grated cheese", image: pavBhajiImg },
+    { name: "Paneer Pav Bhaji", price: 130, description: "With cottage cheese cubes", image: pavBhajiImg },
+    { name: "Jain Pav Bhaji", price: 90, description: "No onion, no garlic", image: pavBhajiImg },
+    { name: "Dry Bhaji (No Pav)", price: 60, description: "Just the bhaji", image: pavBhajiImg },
   ],
   soups: [
-    { name: "Tomato Soup", price: 60, description: "Classic tangy tomato", isPopular: true },
-    { name: "Sweet Corn Soup", price: 70, description: "Creamy corn soup" },
-    { name: "Hot & Sour Soup", price: 70, description: "Spicy and tangy", isSpicy: true },
-    { name: "Manchow Soup", price: 80, description: "Indo-Chinese style" },
-    { name: "Cream of Mushroom", price: 90, description: "Rich mushroom cream soup" },
-    { name: "Mixed Veg Soup", price: 70, description: "Healthy vegetable broth" },
+    { name: "Tomato Soup", price: 60, description: "Classic tangy tomato", isPopular: true, image: soupImg },
+    { name: "Sweet Corn Soup", price: 70, description: "Creamy corn soup", image: soupImg },
+    { name: "Hot & Sour Soup", price: 70, description: "Spicy and tangy", isSpicy: true, image: soupImg },
+    { name: "Manchow Soup", price: 80, description: "Indo-Chinese style", image: soupImg },
+    { name: "Cream of Mushroom", price: 90, description: "Rich mushroom cream soup", image: soupImg },
+    { name: "Mixed Veg Soup", price: 70, description: "Healthy vegetable broth", image: soupImg },
   ],
 };
 
@@ -140,11 +176,14 @@ const MenuSection = () => {
 
         {/* Featured Category Image */}
         <div className="mb-12 max-w-4xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+          <div className="relative rounded-2xl overflow-hidden shadow-elegant bg-muted">
             <img 
               src={currentCategory?.image} 
               alt={currentCategory?.name}
               className="w-full h-48 md:h-64 object-cover"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = placeholderImg;
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -177,11 +216,23 @@ const MenuSection = () => {
               className="bg-card rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 group border border-border/50 hover:border-primary/30"
             >
               {item.image && (
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden bg-muted">
                   <img 
                     src={item.image} 
                     alt={item.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = placeholderImg;
+                    }}
+                  />
+                </div>
+              )}
+              {!item.image && (
+                <div className="h-48 overflow-hidden bg-muted">
+                  <img 
+                    src={placeholderImg} 
+                    alt={item.name} 
+                    className="w-full h-full object-cover"
                   />
                 </div>
               )}
