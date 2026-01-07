@@ -10,6 +10,11 @@ import menuBurger from "@/assets/menu-burger.jpg";
 import menuPavbhaji from "@/assets/menu-pavbhaji.jpg";
 import menuSoup from "@/assets/menu-soup.jpg";
 
+// Import dish images
+import sabudanaKhichdiImg from "@assets/stock_images/sabudana_khichdi_ind_171b2ed2.jpg";
+import sabudanaVadaImg from "@assets/stock_images/sabudana_vada_indian_6311216a.jpg";
+import kuttuPuriImg from "@assets/stock_images/indian_fasting_food__23b2df75.jpg";
+
 const menuCategories = [
   { id: "snacks", name: "Snacks", icon: UtensilsCrossed, image: menuSnacks },
   { id: "breakfast", name: "Breakfast", icon: Coffee, image: menuBreakfast },
@@ -20,7 +25,7 @@ const menuCategories = [
   { id: "soups", name: "Soups", icon: Soup, image: menuSoup },
 ];
 
-const menuItems: Record<string, Array<{ name: string; price: number; description?: string; isPopular?: boolean; isSpicy?: boolean }>> = {
+const menuItems: Record<string, Array<{ name: string; price: number; description?: string; isPopular?: boolean; isSpicy?: boolean; image?: string }>> = {
   snacks: [
     { name: "Samosa (2 pcs)", price: 30, description: "Crispy pastry with spiced potato filling", isPopular: true },
     { name: "Kachori (2 pcs)", price: 40, description: "Flaky pastry with dal filling" },
@@ -48,9 +53,9 @@ const menuItems: Record<string, Array<{ name: string; price: number; description
     { name: "Aloo Paratha", price: 70, description: "Potato stuffed flatbread" },
   ],
   fasting: [
-    { name: "Sabudana Khichdi", price: 70, description: "Tapioca pearls with peanuts", isPopular: true },
-    { name: "Sabudana Vada (2 pcs)", price: 60, description: "Crispy tapioca fritters" },
-    { name: "Kuttu Puri (4 pcs)", price: 80, description: "Buckwheat flour puris" },
+    { name: "Sabudana Khichdi", price: 70, description: "Tapioca pearls with peanuts", isPopular: true, image: sabudanaKhichdiImg },
+    { name: "Sabudana Vada (2 pcs)", price: 60, description: "Crispy tapioca fritters", image: sabudanaVadaImg },
+    { name: "Kuttu Puri (4 pcs)", price: 80, description: "Buckwheat flour puris", image: kuttuPuriImg },
     { name: "Rajgira Paratha", price: 80, description: "Amaranth flour flatbread" },
     { name: "Fruit Salad", price: 60, description: "Fresh seasonal fruits" },
     { name: "Singhara Atta Halwa", price: 50, description: "Sweet water chestnut flour halwa" },
@@ -165,38 +170,49 @@ const MenuSection = () => {
         )}
 
         {/* Menu Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {menuItems[activeCategory]?.map((item, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-5 shadow-soft hover:shadow-card transition-all duration-300 group border border-border/50 hover:border-primary/30"
+              className="bg-card rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 group border border-border/50 hover:border-primary/30"
             >
-              <div className="flex justify-between items-start gap-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {item.name}
-                    </h4>
-                    {item.isPopular && (
-                      <span className="inline-flex items-center gap-1 bg-secondary/10 text-secondary text-xs px-2 py-0.5 rounded-full">
-                        <Star className="w-3 h-3 fill-secondary" />
-                        Popular
-                      </span>
-                    )}
-                    {item.isSpicy && (
-                      <span className="inline-flex items-center gap-1 bg-destructive/10 text-destructive text-xs px-2 py-0.5 rounded-full">
-                        <Flame className="w-3 h-3" />
-                        Spicy
-                      </span>
+              {item.image && (
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
+              <div className="p-5">
+                <div className="flex justify-between items-start gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {item.name}
+                      </h4>
+                      {item.isPopular && (
+                        <span className="inline-flex items-center gap-1 bg-secondary/10 text-secondary text-xs px-2 py-0.5 rounded-full">
+                          <Star className="w-3 h-3 fill-secondary" />
+                          Popular
+                        </span>
+                      )}
+                      {item.isSpicy && (
+                        <span className="inline-flex items-center gap-1 bg-destructive/10 text-destructive text-xs px-2 py-0.5 rounded-full">
+                          <Flame className="w-3 h-3" />
+                          Spicy
+                        </span>
+                      )}
+                    </div>
+                    {item.description && (
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
                     )}
                   </div>
-                  {item.description && (
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  )}
+                  <span className="font-serif text-xl font-bold text-primary whitespace-nowrap bg-primary/5 px-3 py-1 rounded-lg">
+                    ₹{item.price}
+                  </span>
                 </div>
-                <span className="font-serif text-xl font-bold text-primary whitespace-nowrap bg-primary/5 px-3 py-1 rounded-lg">
-                  ₹{item.price}
-                </span>
               </div>
             </div>
           ))}
